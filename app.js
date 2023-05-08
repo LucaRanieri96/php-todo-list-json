@@ -5,6 +5,7 @@ createApp({
       tasks: null,
       api_url: "getTasks.php",
       store_url: "storeTasks.php",
+      remove_url: "removeTasks.php",
       newTask: "",
     };
   },
@@ -13,7 +14,7 @@ createApp({
     addTask() {
       // uso sempre axios come ho fatto sotto, invece di get per ottenere i dati dall'api userò post per inserirceli e seguirò la procedura inversa di storeTasks.php
       const data = {
-        newTask: this.newTask
+        newTask: this.newTask,
       };
       axios
         .post(this.store_url, data, {
@@ -27,7 +28,20 @@ createApp({
           console.error(error.message);
         });
     },
-
+    deleteTask(index) {
+      // cancello la task dall'array usando splice per vedere se funziona
+      // this.tasks.splice(index, 1);
+      // ora però devo richiamare anche il mio backend con axios per aggiornare l'array di task attraverso "removeTasks.php
+      axios
+        .post(this.remove_url, index)
+        .then((response) => {
+          console.log(response);
+          this.tasks = response.data;
+        })
+        .catch((error) => {
+          console.error(error.message);
+        });
+    },
   },
   mounted() {
     // uso axios per prendere il contenuto dall'api "getTasks" e metterle in "tasks"
