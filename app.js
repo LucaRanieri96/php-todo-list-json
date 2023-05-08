@@ -12,13 +12,16 @@ createApp({
   methods: {
     addTask() {
       // uso sempre axios come ho fatto sotto, invece di get per ottenere i dati dall'api userò post per inserirceli e seguirò la procedura inversa di storeTasks.php
+      const data = {
+        newTask: this.newTask
+      };
       axios
-        .post(this.store_url, this.newTask, {
+        .post(this.store_url, data, {
           headers: { "Content-Type": "multipart/form-data" },
         })
         .then((response) => {
           console.log(response);
-          this.newTask = response.data;
+          this.tasks = response.data;
         })
         .catch((error) => {
           console.error(error.message);

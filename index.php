@@ -21,8 +21,8 @@
     </ul>
 
 
-    <div class="add_task">
-      <input type="text" v-model="new_task" @keyup.enter="addTask" placeholder="Add a task">
+    <div class="addTask">
+      <input type="text" v-model="newTask" @keyup.enter="addTask" placeholder="Add a task">
     </div>
 
 

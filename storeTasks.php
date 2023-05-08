@@ -1,7 +1,7 @@
 <?php
 // metodo per aggiungere task all'api
-if (isset($_POST['new_task'])) {
-    $task = $_POST['new_task'];
+if (isset($_POST['newTask'])) {
+    $task = $_POST['newTask'];
 
     //   metto il contenuto del file json dentro una variabile ma come stringa
     $tasks_string = file_get_contents('tasks.json');
