@@ -23,6 +23,7 @@ createApp({
         .then((response) => {
           console.log(response);
           this.tasks = response.data;
+          this.newTask = ""; //imposto nuovamente newTask come vuoto
         })
         .catch((error) => {
           console.error(error.message);
