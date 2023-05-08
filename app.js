@@ -12,6 +12,10 @@ createApp({
   //   mi serve un metodo per pushare le nuove task dentro l'array nell'api, attraverso storeTasks
   methods: {
     addTask() {
+      // aggiungo una condizione per non fare nulla quando newTask è vuoto
+      if (this.newTask.trim() === "") {
+        return;
+      }
       // uso sempre axios come ho fatto sotto, invece di get per ottenere i dati dall'api userò post per inserirceli e seguirò la procedura inversa di storeTasks.php
       const data = {
         newTask: this.newTask,
