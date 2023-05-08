@@ -1,4 +1,16 @@
 body {
-    background-color: #313131;
-    color: white;
-  }
+  background-color: #313131;
+  padding: 10vh;
+}
+
+h2{
+  color: rgb(255, 85, 0) !important;
+  font-size: 42px;
+}
+.card,
+.input-group{
+  width: 400px !important;
+}
+#basic-addon1{
+  cursor: pointer;
+}
