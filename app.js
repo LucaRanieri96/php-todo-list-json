@@ -4,6 +4,7 @@ createApp({
     return {
       tasks: null,
       api_url: 'getTasks.php',
+      store_url: 'storeTasks.php',
     }
   },
   methods: {
