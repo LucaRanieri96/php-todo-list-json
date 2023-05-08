@@ -27,6 +27,7 @@ createApp({
           console.error(error.message);
         });
     },
+
   },
   mounted() {
     // uso axios per prendere il contenuto dall'api "getTasks" e metterle in "tasks"
