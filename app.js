@@ -32,8 +32,13 @@ createApp({
       // cancello la task dall'array usando splice per vedere se funziona
       // this.tasks.splice(index, 1);
       // ora però devo richiamare anche il mio backend con axios per aggiornare l'array di task attraverso "removeTasks.php
+      const data = {
+        index: index,
+      };
       axios
-        .post(this.remove_url, index)
+        .post(this.remove_url, data, {
+          headers: { "Content-Type": "multipart/form-data" },
+        })
         .then((response) => {
           console.log(response);
           this.tasks = response.data;
