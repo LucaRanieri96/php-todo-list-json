@@ -15,8 +15,9 @@
     <h1>TO-DO LIST</h1>
 
     <ul>
-      <li v-for="task in tasks">
+      <li v-for="(task, index) in tasks">
         {{ task }}
+        <button @click="deleteTask(index)">Delete</button>
       </li>
     </ul>
 
