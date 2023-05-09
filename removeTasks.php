@@ -1,6 +1,7 @@
 <?php
 
 if (isset($_POST['index'])) {
+    
     $taskIndex = $_POST['index'];
 
     //   metto il contenuto del file json dentro una variabile ma come stringa

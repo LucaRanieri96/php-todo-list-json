@@ -6,6 +6,7 @@ createApp({
       api_url: "getTasks.php",
       store_url: "storeTasks.php",
       remove_url: "removeTasks.php",
+      update_url: "updateTasks.php",
       newTask: "",
     };
   },
@@ -52,6 +53,10 @@ createApp({
           console.error(error.message);
         });
     },
+    taskDone(index) {  
+      // toggle
+      this.tasks[index].done = !this.tasks[index].done;
+    }
   },
   mounted() {
     // uso axios per prendere il contenuto dall'api "getTasks" e metterle in "tasks"

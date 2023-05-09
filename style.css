@@ -16,3 +16,10 @@ h2{
   background-color: #484848;
   color: white;
 }
+
+li.done > div{
+  text-decoration: line-through;
+}
+li .pointer{
+  cursor: pointer;
+}
