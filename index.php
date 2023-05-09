@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang='en'>
 
 <head>
@@ -19,7 +20,7 @@
         <div class="col">
           <div class="card mx-auto my-3" style="width: 18rem;">
             <ul class="list-group list-group-flush">
-              <li v-for="(task, index) in tasks" :class="task.done ? 'done' : '' "
+              <li v-for="(task, index) in tasks" :class="task.done === 'true' ? 'done' : '' "
                 class="list-group-item d-flex justify-content-between align-items-center">
                 <div class="pointer" @click="taskDone(index)">{{ task.text }}</div>
                 <button @click="deleteTask(index)" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>

@@ -54,13 +54,21 @@ createApp({
         });
     },
     taskDone(index) {  
-      // toggle
-      this.tasks[index].done = !this.tasks[index].done;
+      let status;
+
+      if (this.tasks[index].done === 'false') {
+        status = 'true';
+      } else {
+        status = 'false';
+      }
+      
+      this.tasks[index].done = status;
       
       const data = {
         index: index,
-        done: this.tasks[index].done
+        done: status
       };
+      
       axios
         .post(this.update_url, data, {
           headers: { "Content-Type": "multipart/form-data" },

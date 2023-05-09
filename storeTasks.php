@@ -6,7 +6,7 @@ if (isset($_POST['newTask'])) {
 
     $task = [
         "text" => $_POST['newTask'],
-        "done" => true,
+        "done" => "false",
     ];
 
     //   metto il contenuto del file json dentro una variabile ma come stringa
