@@ -6,9 +6,9 @@
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <title>Todo List</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link href='./style.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -19,7 +19,7 @@
         <div class="col">
           <div class="card mx-auto my-3" style="width: 18rem;">
             <ul class="list-group list-group-flush">
-              <li v-for="(task, index) in tasks" :class="task.done === 'true' ? 'done' : '' "
+              <li v-for="(task, index) in tasks" :class="task.done ? 'done' : '' "
                 class="list-group-item d-flex justify-content-between align-items-center">
                 <div class="pointer" @click="taskDone(index)">{{ task.text }}</div>
                 <button @click="deleteTask(index)" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
@@ -27,8 +27,7 @@
             </ul>
           </div>
           <div class="input-group mb-3 mx-auto">
-            <input type="text" class="form-control" v-model="newTask" @keyup.enter="addTask"
-              placeholder="Add a task">
+            <input type="text" class="form-control" v-model="newTask" @keyup.enter="addTask" placeholder="Add a task">
             <span class="input-group-text" id="basic-addon1" @click="addTask">Add Task</span>
           </div>
 

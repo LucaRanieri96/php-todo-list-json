@@ -17,7 +17,7 @@ h2{
   color: white;
 }
 
-li.done > div{
+li.done .pointer{
   text-decoration: line-through;
 }
 li .pointer{

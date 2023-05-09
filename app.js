@@ -56,6 +56,22 @@ createApp({
     taskDone(index) {  
       // toggle
       this.tasks[index].done = !this.tasks[index].done;
+      
+      const data = {
+        index: index,
+        done: this.tasks[index].done
+      };
+      axios
+        .post(this.update_url, data, {
+          headers: { "Content-Type": "multipart/form-data" },
+        })
+        .then((response) => {
+          console.log(response);
+          this.tasks = response.data;
+        })
+        .catch((error) => {
+          console.error(error.message);
+        });
     }
   },
   mounted() {
