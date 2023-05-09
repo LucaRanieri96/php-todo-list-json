@@ -1,25 +1,28 @@
 body {
-  background-color: #313131;
-  padding-top: 10vh;
+  background-image: url(./img/wallpaper.webp);
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 8vh;
+  font-family: 'Montserrat', sans-serif;
 }
 
-h2{
-  color: rgb(218, 0, 0) !important;
-  font-size: 42px;
+h2 {
+  color: rgb(255, 255, 255) !important;
+  font-size: 80px;
+  font-weight: 600;
 }
-.card,
-.input-group{
-  width: 400px !important;
-}
-#basic-addon1{
+
+#basic-addon1 {
   cursor: pointer;
   background-color: #484848;
   color: white;
 }
 
-li.done .pointer{
+li.done .pointer {
   text-decoration: line-through;
 }
-li .pointer{
+li .pointer {
   cursor: pointer;
+  font-size: 25px;
+  font-weight: 500;
 }
